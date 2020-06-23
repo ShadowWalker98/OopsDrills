@@ -87,3 +87,37 @@ new Person("Samuel", "Hyderabad", 20);
 new Person("Neha", "Hyderabad", 21);
 new Person("Ruchitha", "Hyderabad", 20);
 new Person("Nihash", "Hyderabad", 20 );
+
+class Vehicle {
+    constructor(manufacturer, numWheels, type) {
+        this.manufacturer = manufacturer;
+        this.numWheels = numWheels;
+        this.type = type;
+    }
+    
+
+    aboutVehicle() {
+        console.log(`Type: ${this.type} \n Manufacturer: ${this.manufacturer} \n NumberOfWheels: ${this.numWheels}`);
+
+    }
+}
+
+// inheritance property
+
+class Truck extends Vehicle {
+    constructor(manufacturer, numWheels, doors) {
+        super(manufacturer, numWheels, "truck");
+        this.doors = doors;
+        this.hasTruckBed = true;
+    }
+
+    // overriding method in parent class
+
+    aboutVehicle() {
+        super.aboutVehicle();
+        console.log(` Number of Doors: ${this.doors} \n hasTruckBed: ${this.hasTruckBed}`);
+    }
+}
+
+new Vehicle("Volvo", 6, "bus").aboutVehicle();
+new Truck("Merc", 8, 4).aboutVehicle()
